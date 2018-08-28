@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    </head>
+    <body>
+        <input onclick="getWeather()" type='button' value='🔊 Play' />
+        <p></p>
+        
+        <script>
+            getWeather();
+            
+            function speak(speech)
+            {
+                responsiveVoice.speak(speech, "UK English Female", {volume: 1 });
+            }
+            
+            function getWeather()
+            {
+		        	$.getJSON("http://api.openweathermap.org/data/2.5/weather",
+				{
+					id:"3070446",
+					units:"metric",
+                    APPID:"ccf7ca19702640b09f38dc6de1d28fc6"
+                    
+				},
+				function(response){             
+                        var temperature = (response.main.temp);
+                    
+                        function sayTemp()
+                        {
+                            speak("Good morning, the outside temperature is: " + response.main.temp + " celsius and the time is " + new Date().getHours() + " hours and " + new Date().getMinutes() + " minutes");
+                        }
+                        
+                        while(true)
+                        {
+                            var dt = new Date();
+                            var th = dt.getHours();
+                            var tm = dt.getMinutes();
+                            var ts = dt.getSeconds();
+                            
+                            if(th == "7" && tm == "0" && ts == "0")
+                            {
+                                sayTemp();
+                            }
+                        }
+                        
+                        sayTemp();
+				});
+            }
+        </script>
+    </body>
+</html>
