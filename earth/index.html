@@ -12,11 +12,18 @@
         </div>
         
         <script>
-            var audio = new Audio("audio.mp3");
-            audio.play();
-            audio.volume = 0.2;
-            
             $(document).ready(function(){
+                
+                var audio = new Audio("audio.mp3");
+                audio.play();
+                audio.volume = 0.2;
+                audio.autoplay = true;
+                
+                if(audio.paused)
+                {
+                    audio.play();
+                }
+
                 
                 function rotateClouds()
                 {
