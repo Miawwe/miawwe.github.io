@@ -1,0 +1,24 @@
+body {
+    overflow: hidden;
+    background-color: black;
+}
+
+.earth {
+    margin-top: 50%;
+    margin-left: 23%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#earth {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#clouds {
+    position: absolute;
+    top: 30px;
+    left: 70px;
+}

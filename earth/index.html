@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="earth">
+            <img id="earth" src="earth.png" alt="">
+            <img id="clouds" src="clouds.png" alt="">
+        </div>
+        
+        <script>
+            $(document).ready(function(){
+                
+                function rotateClouds()
+                {
+                    var angle = ($("#clouds").data("angle") + 0.005) || 0.01;
+                    $("#clouds").css({"transform": "rotate(" + angle + "deg)"});
+                    $("#clouds").data("angle", angle);
+                }
+                
+                function rotateEarth()
+                {
+                    var angle = ($("#earth").data("angle") + 0.001) || 0.001;
+                    $("#earth").css({"transform": "rotate(" + angle + "deg)"});
+                    $("#earth").data("angle", angle);
+                }
+
+                window.setInterval(function(){
+                    rotateClouds();
+                }, 1);
+                
+                window.setInterval(function(){
+                    rotateEarth();
+                }, 1);
+            });
+        </script>
+    </body>
+</html>
