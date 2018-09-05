@@ -4,11 +4,11 @@ body {
 }
 
 .earth {
-    margin-top: 23%;
-    margin-left: 23%;
+    --margin-top: 23%;
+    --margin-left: 23%;
     position: relative;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
 }
 
 #earth {
