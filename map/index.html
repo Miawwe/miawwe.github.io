@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>App</title>
+        
+    </head>
+    <body>
+        <div id="map"></div>
+        <div id="hidui"></div>
+    </body>
+    
+    <script>
+    function myMap() {
+        var mapOptions = {
+            center: new google.maps.LatLng(50.076638, 14.437845),
+            zoom: 13,
+            mapTypeId: google.maps.MapTypeId.TERRAIN
+        }
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    }
+    </script>
+    
+    <style>
+        #map {
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        /*
+        #hidui{
+            height: 400px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background-color: rgba(33,33,33,0.5);
+        }
+        #hidui:hover{
+            display: none;
+            background-color: rgba(00,00,00,0)
+        }
+        #hidui:(#map:hover){
+            display: none;
+        }
+        */
+    </style>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+</html>
